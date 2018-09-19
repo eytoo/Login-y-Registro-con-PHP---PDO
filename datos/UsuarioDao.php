@@ -31,8 +31,8 @@ class UsuarioDao extends Conexion
 
         $resultado = self::$cnx->prepare($query);
 
-        $resultado->bindParam(":usuario", $usuario->getUsuario());
-        $resultado->bindParam(":password", $usuario->getPassword());
+        $resultado->bindValue(":usuario", $usuario->getUsuario());
+        $resultado->bindValue(":password", $usuario->getPassword());
 
         $resultado->execute();
 
@@ -61,8 +61,8 @@ class UsuarioDao extends Conexion
 
         $resultado = self::$cnx->prepare($query);
 
-        $resultado->bindParam(":usuario", $usuario->getUsuario());
-        $resultado->bindParam(":password", $usuario->getPassword());
+        $resultado->bindValue(":usuario", $usuario->getUsuario());
+        $resultado->bindValue(":password", $usuario->getPassword());
 
         $resultado->execute();
 
@@ -93,11 +93,11 @@ class UsuarioDao extends Conexion
 
         $resultado = self::$cnx->prepare($query);
 
-        $resultado->bindParam(":nombre", $usuario->getNombre());
-        $resultado->bindParam(":email", $usuario->getEmail());
-        $resultado->bindParam(":usuario", $usuario->getUsuario());
-        $resultado->bindParam(":password", $usuario->getPassword());
-        $resultado->bindParam(":privilegio", $usuario->getPrivilegio());
+        $resultado->bindValue(":nombre", $usuario->getNombre());
+        $resultado->bindValue(":email", $usuario->getEmail());
+        $resultado->bindValue(":usuario", $usuario->getUsuario());
+        $resultado->bindValue(":password", $usuario->getPassword());
+        $resultado->bindValue(":privilegio", $usuario->getPrivilegio());
 
         if ($resultado->execute()) {
             return true;
